@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Fabio Morini – Game Developer</title>
-  <meta name="description" content="Fabio Morini – Game developer &amp; software engineer. Gameplay systems, live-ops, services, tooling. DECA Games." />
+  <title>Fabio Morini – Unity Software Engineer</title>
+  <meta name="description" content="Fabio Morini – Unity Software Engineer &amp; software engineer. Gameplay systems, live-ops, services, tooling. DECA Games." />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
@@ -19,9 +19,10 @@
 
   <section id="about" class="section about">
     <div class="wrap">
-      <h1 class="hero-title">Fabio Morini – Game Developer</h1>
+      <h1 class="hero-title">Fabio Morini – Unity Software Engineer</h1>
 
       <nav class="keywords" aria-label="Section navigation">
+        <a href="#about">About</a>
         <a href="#projects">Projects</a>
         <a href="#lab">Experiments</a>
         <a href="#community">Community</a>
@@ -95,7 +96,10 @@
 
       <div id="projects-wrap" class="projects grid">
         <article class="project">
-          <h4>Madfinger Games</h4>
+          <header class="project-head">
+            <h4>Madfinger Games</h4>
+            <span class="project-role">Unity Software Engineer</span>
+          </header>
           <div class="tag-row">
             <span class="tag tag-type">DECA GAMES</span>
             <span class="tag tag-blue">Unity</span>
@@ -127,7 +131,10 @@
         </article>
 
         <article class="project">
-          <h4>Level eight games</h4>
+          <header class="project-head">
+            <h4>Level eight games</h4>
+            <span class="project-role">C++ Developer</span>
+          </header>
           <div class="tag-row">
             <span class="tag tag-type">DECA GAMES</span>
             <span class="tag tag-blue-soft">C++</span>
@@ -156,7 +163,10 @@
         </article>
 
         <article class="project">
-          <h4>Sugary Falls - Twin stick shooter roguelike</h4>
+          <header class="project-head">
+            <h4>Sugary Falls - Twin stick shooter roguelike</h4>
+            <span class="project-role">C++ Developer</span>
+          </header>
           <div class="tag-row">
             <span class="tag tag-type">UNIVERSITY</span>
             <span class="tag tag-blue">Unreal Engine</span>
@@ -203,7 +213,10 @@
         </article>
 
         <article class="project">
-          <h4>Ghosts ’n Goblins – Stage 1</h4>
+          <header class="project-head">
+            <h4>Ghosts ’n Goblins – Stage 1</h4>
+            <span class="project-role">JS Developer</span>
+          </header>
           <div class="tag-row">
             <span class="tag tag-type">UNIVERSITY</span>
             <span class="tag tag-blue-soft">Phaser</span>
@@ -393,6 +406,31 @@
 
     const toTop = document.querySelector(".to-top");
     const toTopOffset = 20;
+
+    const toCv = document.querySelector(".to-cv");
+    const resumeSection = document.getElementById("resume");
+
+    function updateToCvVisibility() {
+      if (!toCv || !resumeSection) return;
+
+      const resumeTop = resumeSection.offsetTop;
+      const show = window.scrollY < (resumeTop - toTopOffset);
+
+      if (show) toCv.classList.add("visible");
+      else toCv.classList.remove("visible");
+    }
+
+    window.addEventListener("scroll", updateToCvVisibility);
+    updateToCvVisibility();
+
+    if (toCv) {
+      toCv.addEventListener("click", event => {
+        event.preventDefault();
+        const target = document.querySelector(toCv.getAttribute("href"));
+        if (target) target.scrollIntoView({ behavior: "smooth" });
+      });
+    }
+
 
     function updateToTopVisibility() {
       if (!toTop) return;

@@ -485,3 +485,74 @@ img {
     width: 100%;
   }
 }
+
+.to-cv {
+  position: fixed;
+  right: 18px;
+  top: 22px;
+  width: var(--to-top-size);
+  height: var(--to-top-size);
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: var(--shadow-float);
+  text-decoration: none;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.15s ease, transform 0.15s ease;
+  z-index: 10;
+}
+
+.to-cv {
+  position: fixed;
+  left: 18px;
+  top: calc(22px + var(--to-top-size) + 10px);
+  width: var(--to-top-size);
+  height: var(--to-top-size);
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: var(--shadow-float);
+  text-decoration: none;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.15s ease, transform 0.15s ease;
+  z-index: 10;
+}
+
+.to-cv.visible {
+  opacity: 0.9;
+  pointer-events: auto;
+}
+
+.to-cv:hover {
+  transform: translateY(2px);
+  opacity: 1;
+}
+
+.to-cv img {
+  width: 22px;
+  height: 22px;
+  transform: rotate(180deg);
+}
+
+.project h4 {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.proj-role {
+  font-size: 12px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted);
+  white-space: nowrap;
+}
