@@ -27,6 +27,7 @@ body {
   background: var(--bg);
 }
 
+
 a {
   color: var(--link);
   text-decoration: none;
@@ -124,7 +125,10 @@ img {
 
 .icon:hover img { filter: brightness(0.8); }
 
-.about-body p { margin: 0 0 12px; }
+.about-body p { 
+  margin: 0 0 12px; 
+  text-align: justify;
+}
 .about-body p:first-of-type { font-weight: 600; }
 
 .tag-row {
